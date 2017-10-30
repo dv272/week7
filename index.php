@@ -7,9 +7,9 @@
 	if (isset($_POST["submit"])) {
 		try {
 			$db = new PDO('mysql:host=sql1.njit.edu;dbname=dv272','dv272','6BURYkJzE');
-
+			echo "<h5>Connected successfully.</h5><br>";
 		}catch(PDOException $exc) {
-			echo "<h1>Error: Connection failed!</h1><br>";
+			echo "<h1>".$exc."</h1><br>";
 		}
 		$qry = 'select * from accounts where id < 6';
 		$rslt = $db->prepare($qry);
